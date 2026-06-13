@@ -1,0 +1,181 @@
+# Introduction to SQL
+
+## What is SQL?
+
+SQL (Structured Query Language) is a standard language used to interact with relational databases. It is used to create, manage, manipulate, and retrieve data stored in database tables.
+
+---
+
+## Database
+
+A database is a collection of related data organized in a structured manner.
+
+### Example
+
+A student database may contain information such as student ID, name, age, and marks.
+
+---
+
+## Table
+
+A table is used to store data in rows and columns.
+
+| StudentID | Name  | Age |
+| --------- | ----- | --- |
+| 101       | Alice | 20  |
+| 102       | Bob   | 21  |
+
+---
+
+# Types of SQL Commands
+
+SQL commands are divided into five categories:
+
+1. DDL (Data Definition Language)
+2. DML (Data Manipulation Language)
+3. DQL (Data Query Language)
+4. DCL (Data Control Language)
+5. TCL (Transaction Control Language)
+
+---
+
+## 1. DDL (Data Definition Language)
+
+DDL commands are used to define and modify the structure of database objects.
+
+### CREATE
+
+Creates a new table.
+
+```sql
+CREATE TABLE Students (
+    StudentID INT,
+    Name VARCHAR(50),
+    Age INT
+);
+```
+
+### ALTER
+
+Modifies an existing table.
+
+```sql
+ALTER TABLE Students
+ADD Email VARCHAR(100);
+```
+
+### DROP
+
+Deletes a table permanently.
+
+```sql
+DROP TABLE Students;
+```
+
+### TRUNCATE
+
+Removes all records from a table while keeping its structure.
+
+```sql
+TRUNCATE TABLE Students;
+```
+
+---
+
+## 2. DML (Data Manipulation Language)
+
+DML commands are used to insert, update, and delete data.
+
+### INSERT
+
+```sql
+INSERT INTO Students
+VALUES (101, 'Alice', 20);
+```
+
+### UPDATE
+
+```sql
+UPDATE Students
+SET Age = 21
+WHERE StudentID = 101;
+```
+
+### DELETE
+
+```sql
+DELETE FROM Students
+WHERE StudentID = 101;
+```
+
+---
+
+## 3. DQL (Data Query Language)
+
+DQL commands are used to retrieve data from tables.
+
+### SELECT
+
+```sql
+SELECT * FROM Students;
+```
+
+### SELECT with WHERE
+
+```sql
+SELECT *
+FROM Students
+WHERE Age > 20;
+```
+
+---
+
+## 4. DCL (Data Control Language)
+
+DCL commands are used to control user permissions.
+
+### GRANT
+
+```sql
+GRANT SELECT
+ON Students
+TO User1;
+```
+
+### REVOKE
+
+```sql
+REVOKE SELECT
+ON Students
+FROM User1;
+```
+
+---
+
+## 5. TCL (Transaction Control Language)
+
+TCL commands are used to manage transactions in a database.
+
+### COMMIT
+
+```sql
+COMMIT;
+```
+
+### ROLLBACK
+
+```sql
+ROLLBACK;
+```
+
+### SAVEPOINT
+
+```sql
+SAVEPOINT sp1;
+```
+
+---
+
+# Conclusion
+
+SQL is a database language used to create, modify, manage, and retrieve data from relational databases. The main categories of SQL commands are DDL, DML, DQL, DCL, and TCL, each serving a specific purpose in database management.
